@@ -33,7 +33,7 @@ class Actor(models.Model):
 
     def __unicode__(self):
         if self.stage_name:
-            return '%s (%s)' % (self.stage_name, self.full_name())
+            return '%s (%s)' % (self.stage_name, self.full_name('fmil'))
         else:
             return self.full_name()
 
@@ -49,6 +49,11 @@ class Actor(models.Model):
                 return '%s, %s %s' % (self.last_name, self.first_name, self.middle_initial())
             else:
                 return '%s, %s' % (self.last_name, self.first_name)
+        elif name_order == 'fmil':
+            if self.middle_name:
+                return '%s %s %s' % (self.first_name, self.middle_initial(), self.last_name)
+            else:
+                return '%s %s' % (self.first_name, self.last_name)
         elif name_order == 'lfm':
             if self.middle_name:
                 return '%s, %s %s' % (self.last_name, self.first_name, self.middle_name)
