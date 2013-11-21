@@ -23,15 +23,19 @@ class Actor(models.Model):
     """Information about an Actor including derived fields."""
 
     first_name = models.CharField(max_length=200)
-    middle_name = models.CharField(max_length=200, null=True)
+    middle_name = models.CharField(max_length=200, null=True, blank=True)
     last_name = models.CharField(max_length=200)
+    stage_name = models.CharField(max_length=500, null=True)
     #CSteele - we will just assume we know all actors DOB, not realistic, but fine assumption for this project
     birth_date = models.DateTimeField('date born')
     movies = models.ManyToManyField(Movie)
     biography = models.CharField(max_length=2000, null=True)
 
     def __unicode__(self):
-        return self.full_name()
+        if self.stage_name:
+            return '%s (%s)' % (self.stage_name, self.full_name())
+        else:
+            return self.full_name()
 
     def full_name(self, name_order='lfm'):
         #TODO: CSteele - Clunky way of doing this. Optimize if time.
