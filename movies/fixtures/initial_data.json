@@ -1,0 +1,127 @@
+[
+    {
+        "pk": 1,
+        "model": "movies.movie",
+        "fields": {
+            "created_at": "2013-11-21T20:10:25.588Z",
+            "opening_date": "2013-03-06T13:10:18Z",
+            "description": "One of a million films with an epic appearance from Kevin Bacon.",
+            "title": "Insert Random Kevin Bacon Movie Here"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "movies.movie",
+        "fields": {
+            "created_at": "2013-11-21T20:10:47.332Z",
+            "opening_date": "2013-11-10T13:10:45Z",
+            "description": "Why wouldn't you want to watch this.",
+            "title": "Yet ANOTHER Kevin Bacon Flick"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "movies.movie",
+        "fields": {
+            "created_at": "2013-11-21T20:11:36.183Z",
+            "opening_date": "1992-01-11T13:11:33Z",
+            "description": "I'll never let go Jack!",
+            "title": "Titanic"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "movies.movie",
+        "fields": {
+            "created_at": "2013-11-21T20:12:15.556Z",
+            "opening_date": "2010-09-18T13:12:14Z",
+            "description": "If you haven't seen this, you should.",
+            "title": "Hot Fuzz"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "movies.movie",
+        "fields": {
+            "created_at": "2013-11-21T20:14:04.358Z",
+            "opening_date": "2004-09-24T00:00:00Z",
+            "description": "Simon Pegg kills zombies. It's awesome.",
+            "title": "Shaun of the Dead"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "movies.movie",
+        "fields": {
+            "created_at": "2013-11-21T20:15:04.275Z",
+            "opening_date": "2013-09-09T00:00:00Z",
+            "description": "Might as well round out a trilogy.",
+            "title": "The World's End"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "movies.actor",
+        "fields": {
+            "first_name": "Simon",
+            "last_name": "Pegg",
+            "middle_name": "",
+            "stage_name": "Simon Pegg",
+            "movies": [5, 4, 1, 6],
+            "birth_date": "1970-02-14T00:00:00Z",
+            "biography": "English actor, writer and comedian."
+        }
+    },
+    {
+        "pk": 2,
+        "model": "movies.actor",
+        "fields": {
+            "first_name": "Thomas",
+            "last_name": "Mapother",
+            "middle_name": "Cruise",
+            "stage_name": "Tom Cruise",
+            "movies": [1],
+            "birth_date": "1962-07-03T00:00:00Z",
+            "biography": "Some scientologist."
+        }
+    },
+    {
+        "pk": 3,
+        "model": "movies.actor",
+        "fields": {
+            "first_name": "Leonardo",
+            "last_name": "DiCaprio",
+            "middle_name": "",
+            "stage_name": null,
+            "movies": [3],
+            "birth_date": "1975-12-18T00:00:00Z",
+            "biography": "I didn't want to look up his birthday, even for fixture data."
+        }
+    },
+    {
+        "pk": 4,
+        "model": "movies.actor",
+        "fields": {
+            "first_name": "Kate",
+            "last_name": "Winslet",
+            "middle_name": "",
+            "stage_name": null,
+            "movies": [3],
+            "birth_date": "1970-06-14T00:00:00Z",
+            "biography": "A chick."
+        }
+    },
+    {
+        "pk": 5,
+        "model": "movies.actor",
+        "fields": {
+            "first_name": "Kevin",
+            "last_name": "Bacon",
+            "middle_name": "",
+            "stage_name": "I'm in everything.",
+            "movies": [1, 2, 3, 4, 5, 6],
+            "birth_date": "1960-06-14T00:00:00Z",
+            "biography": "No, seriously, look me up, I'm in everything."
+        }
+    }
+]

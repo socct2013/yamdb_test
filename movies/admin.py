@@ -4,7 +4,8 @@ from movies.models import Movie, Actor
 
 class ActorAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('Name Data',       {'fields': ['first_name', 'middle_name', 'last_name']}),
+        #TODO: CSteele - This requires a stage name via admin, which the model doesn't. Make it congruent.
+        ('Name Data',       {'fields': ['first_name', 'middle_name', 'last_name', 'stage_name']}),
         ('Misc Info',       {'fields': ['birth_date', 'biography']}),
         ('Stars In',       {'fields': ['movies']}),
     ]
