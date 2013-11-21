@@ -1,4 +1,4 @@
-#TODO: CSteele - cleanup imports, not sure if we will use all of datetime etc...
+#TODO: cleanup imports, not sure if we will use all of datetime etc...
 import datetime
 from django.db import models
 
@@ -7,7 +7,7 @@ class Movie(models.Model):
     """A movie and it's related information. A movie can have 0 or more Actors."""
 
     title = models.CharField(max_length=2000)
-    #CSteele - Could have used TextField here...
+    #Could have used TextField here...
     description = models.CharField(max_length=4000)
     opening_date = models.DateTimeField('date opened')
     created_at = models.DateTimeField('created date', auto_now_add=True)
@@ -26,7 +26,7 @@ class Actor(models.Model):
     middle_name = models.CharField(max_length=200, null=True, blank=True)
     last_name = models.CharField(max_length=200)
     stage_name = models.CharField(max_length=500, null=True)
-    #CSteele - we will just assume we know all actors DOB, not realistic, but fine assumption for this project
+    #We will just assume we know all actors DOB, not realistic, but fine assumption for this project
     birth_date = models.DateTimeField('date born')
     movies = models.ManyToManyField(Movie)
     biography = models.CharField(max_length=2000, null=True)
@@ -38,7 +38,7 @@ class Actor(models.Model):
             return self.full_name()
 
     def full_name(self, name_order='lfm'):
-        #TODO: CSteele - Clunky way of doing this. Optimize if time.
+        #TODO: Clunky way of doing this. Optimize if time.
         if name_order == 'fml':
             if self.middle_name:
                 return '%s %s %s' % (self.first_name, self.middle_name, self.last_name)
