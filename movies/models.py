@@ -1,6 +1,5 @@
-#TODO: cleanup imports, not sure if we will use all of datetime etc...
-import datetime
 from django.db import models
+from django.utils import timezone
 
 
 class Movie(models.Model):
@@ -69,7 +68,7 @@ class Actor(models.Model):
             return None
 
     def age(self):
-        today = datetime.date.today()
+        today = timezone.now()
         try:  # deal with leap years
             birthday = self.birth_date.replace(year=today.year)
         except ValueError:

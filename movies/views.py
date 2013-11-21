@@ -20,7 +20,6 @@ def actor_detail(request, actor_id):
     try:
         actor = Actor.objects.get(pk=actor_id)
         formatted_name = actor.full_name('lfmi')
-        print actor.movies.all()
     except Actor.DoesNotExist:
         raise Http404
     return render(request, 'movies/actor_details.html', {'actor': actor,
