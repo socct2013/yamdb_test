@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
 
+from movies.utils import bfs
+
 
 class Movie(models.Model):
     """A movie and it's related information. A movie can have 0 or more Actors."""
@@ -77,6 +79,27 @@ class Actor(models.Model):
             return today.year - self.birth_date.year - 1
         else:
             return today.year - self.birth_date.year
+
+    def bacon_number(self):
+        """
+        Find the path length between this actor and Kevin Bacon. No where near optimized as it uses Breadth First Search
+        when it could use Dijkstra's algo and be much cleaner about the way it creates it's graph. But for a small db
+        it is a quick fun feature to have. Plus, I was bored and putting off styling this.
+        """
+
+        graph = {}
+        actors = Actor.objects.all()
+        for actor in actors:
+            movies = actor.movies.all()
+            costar_list = []
+            for movie in movies:
+                costar_list.extend(movie.actor_set.all())
+            result = list()
+            # make our costar list unique
+            map(lambda x: not x in result and result.append(x), costar_list)
+            graph[actor] = result
+
+        return len(bfs(graph, self, Actor.objects.get(pk=5)))-1
 
     class Meta:
         ordering = ('last_name',)

@@ -60,6 +60,16 @@
         }
     },
     {
+        "pk": 7,
+        "model": "movies.movie",
+        "fields": {
+            "created_at": "2013-11-22T01:02:33.555Z",
+            "opening_date": "2013-11-21T18:02:31Z",
+            "description": "My only star is Demi Moore.",
+            "title": "A movie that DOESN'T have Kevin Bacon"
+        }
+    },
+    {
         "pk": 1,
         "model": "movies.actor",
         "fields": {
@@ -80,7 +90,7 @@
             "last_name": "Mapother",
             "middle_name": "Cruise",
             "stage_name": "Tom Cruise",
-            "movies": [1],
+            "movies": [2, 7],
             "birth_date": "1962-07-03T00:00:00Z",
             "biography": "Some scientologist."
         }
@@ -119,9 +129,22 @@
             "last_name": "Bacon",
             "middle_name": "",
             "stage_name": "I'm in everything.",
-            "movies": [1, 2, 3, 4, 5, 6],
+            "movies": [3, 5, 4, 1, 6, 2],
             "birth_date": "1960-06-14T00:00:00Z",
             "biography": "No, seriously, look me up, I'm in everything."
+        }
+    },
+    {
+        "pk": 6,
+        "model": "movies.actor",
+        "fields": {
+            "first_name": "Demi",
+            "last_name": "Moore",
+            "middle_name": "",
+            "stage_name": "Demi Moore",
+            "movies": [7],
+            "birth_date": "1962-08-04T18:01:33Z",
+            "biography": "Just used as a Kevin Bacon number test case. Sorry Demi."
         }
     }
 ]
